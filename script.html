@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Watson Orchestrate Chatbot Test</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .chat-wrapper {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 70%;
+      max-width: 1000px;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chat-header {
+      background: #0062ff;
+      color: #fff;
+      padding: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    #root {
+      flex: 1;
+      border-top: 1px solid #ccc;
+      background: #fafafa;
+      overflow-y: auto;
+      padding: 20px;
+      font-size: 15px;
+    }
+
+    .chat-footer {
+      background: #f9f9f9;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+      border-top: 1px solid #ddd;
+    }
+
+    .chat-footer span {
+      font-weight: bold;
+      color: #0062ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-wrapper">
+    <div class="chat-header">💬 Course Content Simplification Agent</div>
+    <div id="root"></div>
+    <div class="chat-footer">
+      👉 <span>Click the chat Below above to start chatting</span>
+    </div>
+  </div>
+
+  <script>
+    window.wxOConfiguration = {
+      orchestrationID: "7eb53efe18954edc9c09645850104849_e9bba27b-b579-475b-906e-054db728062e",
+      hostURL: "https://au-syd.watson-orchestrate.cloud.ibm.com",
+      rootElementID: "root",
+      deploymentPlatform: "ibmcloud",
+      crn: "crn:v1:bluemix:public:watsonx-orchestrate:au-syd:a/7eb53efe18954edc9c09645850104849:e9bba27b-b579-475b-906e-054db728062e::",
+      chatOptions: {
+          agentId: "637b398c-deb1-4c59-939e-240c6afbbb5b", 
+          agentEnvironmentId: "70c44fe7-d280-4737-8df4-8078bc1c664f",
+      }
+    };
+    setTimeout(function () {
+      const script = document.createElement('script');
+      script.src = `${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=true`;
+      script.addEventListener('load', function () {
+          wxoLoader.init();
+      });
+      document.head.appendChild(script);
+    }, 0);                     
+  </script>
+</body>
+</html>
