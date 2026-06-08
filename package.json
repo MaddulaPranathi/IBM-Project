@@ -1,0 +1,19 @@
+{
+  "name": "course-simplification-agent",
+  "version": "1.0.0",
+  "description": "Course Content Simplification Agent - AI-powered education assistant",
+  "main": "script.html",
+  "author": "Pranathi",
+  "license": "MIT",
+  "scripts": {
+    "start": "open script.html"
+  },
+  "keywords": [
+    "education",
+    "ai",
+    "chatbot",
+    "simplification",
+    "student-success"
+  ],
+  "homepage": "./script.html"
+}
